@@ -1,0 +1,72 @@
+@import "../include/variables";
+@import "../include/mixins";
+@import "../include/keyframes";
+
+body,
+html {
+  min-height: 100vh !important;
+}
+
+.main-content {
+  min-height: 100vh;
+}
+
+button.loading {
+  position: relative;
+  pointer-events: none !important;
+  .btnLoader {
+    position: absolute;
+    border-radius: 0.75rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: $primaryMain;
+    height: 100%;
+    @include flex(row, center, center);
+    lord-icon {
+      width: 1.5rem;
+      height: auto;
+    }
+  }
+}
+
+.btn {
+  &.btn--primary {
+    background: $primaryMain !important;
+    color: #fff !important;
+  }
+  &.btn--secondary {
+    background: $secondaryVariant !important;
+    color: #fff !important;
+  }
+}
+
+#sidenav-main {
+  background: #f0f5ff !important;
+}
+
+.err {
+  margin-top: 0.5rem;
+  text-align: left;
+  color: rgb(209, 73, 73);
+  font-size: 0.875rem !important;
+  //font-style: italic;
+}
+.gallery-title {
+  font-weight: bolder;
+}
+
+.sendBtn {
+  transition: 0.3s;
+  background: linear-gradient(
+    94.44deg,
+    #2e74ff 0.54%,
+    rgba(46, 116, 255, 0.7) 102.32%
+  );
+  color: #fff;
+  font-weight: 700;
+  &:hover {
+    transform: scale(1.02);
+    background-color: #eeeeee;
+  }
+}

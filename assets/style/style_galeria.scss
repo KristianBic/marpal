@@ -1,0 +1,220 @@
+@import "./include/keyframes";
+@import "./include/variables";
+@import "./include/mixins";
+@import "./include/general";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 25rem);
+
+  .hero-container {
+    padding-bottom: 2rem !important;
+  }
+
+  .gallery {
+    max-width: 130rem;
+    margin: auto;
+    margin-bottom: 5rem;
+    position: relative;
+
+    .emptyContainer {
+      @include flex(column, center, center);
+      max-width: 35rem;
+      width: 100%;
+
+      * {
+        text-align: center;
+        color: $secondaryMain;
+      }
+
+      p {
+        margin: 1rem 0 0 0;
+      }
+
+      margin: 0 auto 2rem auto;
+    }
+
+    .galleryContainer {
+      padding: 0rem 5.5rem 8rem 5.5rem;
+
+      @include responsive(mobile, 0) {
+        padding: 0rem 1.25rem 8rem 1.25rem;
+      }
+
+      .gallery-card-container {
+        padding: 4rem 0;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 3rem;
+        column-gap: 3rem;
+        grid-auto-flow: row;
+        transition: all ease-in-out 0.3s;
+        justify-items: center;
+
+        @include responsive(smallerDesktop, 0) {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @include responsive(biggerTablet, 0) {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include responsive(tablet, 0) {
+          margin: 0;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .gallery-card {
+          cursor: pointer;
+          margin-right: 16px;
+          background-color: #535363;
+          position: relative;
+          color: $white;
+          //width: 15%;
+          //min-width: 30ch;
+          width: 100%;
+          // ak chceme aby to nebolo na cely grid
+          max-width: 35ch;
+          height: 20rem;
+          box-shadow: 16px 16px $primaryMain;
+          background-size: cover;
+          transition: transform 500ms ease;
+          overflow: hidden;
+
+          a {
+            text-decoration: none;
+          }
+
+          &:hover {
+            transform: scale(1.05);
+
+            img,
+            video {
+              transform: scale(1.25);
+              opacity: 0.1;
+            }
+          }
+
+          img,
+          video {
+            -webkit-transition: all 3s ease;
+            -moz-transition: all 3s ease;
+            -o-transition: all 3s ease;
+            -ms-transition: all 3s ease;
+            transition: all 3s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+          }
+
+          video::-webkit-media-controls-start-playback-button {
+            display: none;
+          }
+
+          .gallery-date {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.7rem;
+            font-weight: 400;
+            color: #fff;
+          }
+
+          .gallery-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 0.5rem 2rem 0 2rem;
+
+            * {
+              color: #fff;
+            }
+
+            button {
+              cursor: pointer;
+              padding: 0.4rem 0;
+              margin: 0.8rem 0;
+              color: $white;
+              background-color: transparent;
+              font-size: 0.875rem;
+              margin-bottom: 2rem;
+              display: flex;
+              transition: 1s ease-in-out;
+              border: 2px solid transparent;
+
+              &:hover {
+                padding: 0.4rem 1rem;
+                border: 2px solid $white;
+                //background-color: $white;
+                //color: $primaryMain;
+              }
+
+              svg {
+                margin-left: 0.5rem;
+              }
+            }
+
+            p {
+              text-transform: uppercase;
+              font-weight: 200;
+              font-size: 0.875rem;
+            }
+
+            h4 {
+              max-width: 15ch;
+              word-wrap: break-word;
+              text-transform: none;
+              margin: 0.5rem 0 0 0;
+              font-style: normal;
+              font-weight: normal;
+              letter-spacing: 0.8px;
+            }
+          }
+
+
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  @include flex(row, center, center);
+
+  .number {
+    font-family: $fontText;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    @include flex(row, center, center);
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+    background: rgb(231, 231, 231);
+    color: $secondaryMain;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background: $primaryVariant;
+      color: $secondaryMain;
+    }
+
+    &.active {
+      background: $primaryMain;
+      color: #fff;
+    }
+  }
+}

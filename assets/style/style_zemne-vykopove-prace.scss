@@ -1,0 +1,261 @@
+@import "./include/keyframes";
+@import "./include/variables";
+@import "./include/mixins";
+@import "./include/general";
+
+.hero-container {
+  video {
+    transform: translate(6rem, 2rem);
+    @include responsive(smallerDesktop, 0) {
+      transform: translate(-22rem, -6rem);
+    }
+    @media (max-width: 65em) {
+      transform: translate(-20rem, 0);
+    }
+    @include responsive(tablet, 0) {
+      transform: translate(-25rem, 0);
+    }
+    @include responsive(mobile, 0) {
+      transform: translate(-40rem, 0);
+    }
+  }
+}
+
+.body {
+  position: relative;
+  min-height: calc(100vh - 25rem);
+  .services {
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        rgba(248, 248, 248, 0) 6.27%
+      ),
+      linear-gradient(180deg, #f8f8f8 0%, rgba(248, 248, 248, 0) 100%);
+    padding-top: 5rem;
+    position: relative;
+    width: 100%;
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      @include responsive(tablet, 0) {
+        margin: 1.5rem 1.25rem;
+      }
+    }
+
+    p {
+      text-align: center;
+      max-width: 55ch;
+      margin: 0 auto;
+      @include responsive(mobile, 0) {
+        margin: 0 1.25rem;
+      }
+    }
+
+    .services-container {
+      max-width: 130rem;
+      margin: auto;
+      position: relative;
+      width: 100%;
+      padding: 5rem 5.5rem 8rem 5.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        "zemne terenne"
+        "zakladanie buracie"
+        "pripojky pripojky";
+      justify-items: center;
+      row-gap: 4rem;
+      column-gap: 4rem;
+      transition: all ease-in-out 0.3s;
+      @include responsive(biggerTablet, 0) {
+        display: block;
+      }
+
+      .services-card {
+        position: relative;
+        cursor: default;
+        min-width: 40ch;
+        width: 100%;
+        background-color: $white;
+        box-shadow: 0px 24px 38px rgba(183, 183, 183, 0.14),
+          0px 9px 46px rgba(183, 183, 183, 0.12),
+          0px 11px 15px rgba(183, 183, 183, 0.2);
+        position: relative;
+        background-size: cover;
+        z-index: 1;
+        transition: all ease-in-out 0.3s;
+        overflow: hidden;
+        display: flex;
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          //top: 10%;
+          width: 0.2rem;
+          opacity: 0.5;
+          height: 100%;
+          background: linear-gradient(
+            94.44deg,
+            $primaryVariant 0.54%,
+            rgba(46, 116, 255, 0.7) 102.32%
+          );
+          @include responsive(mobile, 0) {
+            margin-right: 1.25rem;
+          }
+        }
+        @include responsive(mobile, 0) {
+          display: block;
+          width: 60%;
+          margin: 0 1.25rem;
+        }
+        &:hover {
+          transform: scale3d(1.006, 1.006, 1);
+          box-shadow: 0px 24px 50px rgba(183, 183, 183, 0.3),
+            0px 9px 50px rgba(183, 183, 183, 0.28),
+            0px 11px 30px rgba(183, 183, 183, 0.36);
+        }
+        &:last-child {
+          grid-area: pripojky;
+          max-width: 50%;
+          margin-inline: auto;
+        }
+
+        @include responsive(biggerTablet, 0) {
+          margin-bottom: 2rem;
+          &:last-child {
+            max-width: 100%;
+          }
+        }
+        @include responsive(smallerMobile, 0) {
+          min-width: 35ch;
+        }
+        .img-overlay {
+          width: 35%;
+          opacity: 1;
+          min-height: 11rem;
+          height: 12rem;
+          @include responsive(smallerDesktop, 0) {
+            height: unset;
+          }
+          @include responsive(biggerTablet, 0) {
+            width: 35%;
+          }
+          @include responsive(mobile, 0) {
+            width: 100%;
+            min-height: 11rem;
+            height: 12rem;
+          }
+
+          img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            opacity: 0.9;
+            transition: all ease-in-out 0.4s;
+          }
+        }
+
+        .services-card-content {
+          width: 65%;
+          @include responsive(mobile, 0) {
+            width: 100%;
+          }
+          h4 {
+            margin: 1.4rem 1rem;
+          }
+
+          p {
+            margin: 1.4rem 1rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+    @include responsive(mobile, 0) {
+      .services-container {
+        padding-inline: 0;
+        .services-card {
+          width: calc(100% - 2rem);
+          margin: 0 auto 2rem auto;
+        }
+      }
+    }
+  }
+  .nochallange {
+    max-width: 130rem;
+    margin: auto;
+    position: relative;
+    padding: 0 5.5rem;
+    @include flex(row, center, center);
+    @include responsive(tablet, 0) {
+      @include flex(column, center, center);
+    }
+    @include responsive(mobile, 0) {
+      padding: 0 1.25rem;
+    }
+    &:before {
+      content: "";
+      position: relative;
+      width: 0.4rem;
+      height: 13rem;
+      background: linear-gradient(
+        94.44deg,
+        #2e74ff 0.54%,
+        rgba(46, 116, 255, 0.7) 102.32%
+      );
+      @include responsive(tablet, 0) {
+        order: 1;
+        margin: 0;
+        width: 100%;
+        height: 0.4rem;
+      }
+    }
+
+    .nochallange-image {
+      object-fit: cover;
+      opacity: 0.9;
+      height: 20rem;
+      min-width: 25%;
+      z-index: 3;
+      position: relative;
+      box-shadow: 0px 24px 38px rgba(183, 183, 183, 0.14),
+        0px 9px 46px rgba(183, 183, 183, 0.12),
+        0px 11px 15px rgba(183, 183, 183, 0.2);
+      @include responsive(tablet, 0) {
+        order: 2;
+        width: 100%;
+        box-shadow: none;
+      }
+    }
+
+    .nochallange-container {
+      max-width: 35%;
+      max-height: 30rem;
+      background-color: $white;
+      z-index: 3;
+      margin: 5rem 0;
+      position: relative;
+      @include flex(flex, center, center);
+      box-shadow: 0px 24px 38px rgba(183, 183, 183, 0.14),
+        0px 9px 46px rgba(183, 183, 183, 0.12),
+        0px 11px 15px rgba(183, 183, 183, 0.2);
+      @include responsive(tablet, 0) {
+        order: 3;
+        max-width: unset;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 3rem;
+      }
+      .nochallange-content {
+        width: 100%;
+        margin: 3rem;
+        p {
+          margin: 2rem 0 0 0;
+        }
+        @include responsive(mobile, 0) {
+          margin: 2rem 1rem;
+        }
+      }
+    }
+  }
+}

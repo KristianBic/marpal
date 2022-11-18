@@ -1,0 +1,266 @@
+@import "./include/keyframes";
+@import "./include/variables";
+@import "./include/mixins";
+@import "./include/general";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  position: relative;
+  min-height: calc(100vh - 25rem);
+
+  .sortiment {
+    position: relative;
+    width: 100%;
+    padding-top: 5rem;
+
+    .sortiment-container {
+      max-width: 100rem;
+      margin: auto;
+      transform: translateX(5rem);
+      transition: all 0.3s ease;
+      z-index: 0;
+      padding: 0 5.5rem 5.5rem 5.5rem;
+      width: 100%;
+      @include flex(none, center, center);
+      flex-wrap: wrap;
+      position: relative;
+      //background: linear-gradient(180deg, rgba(248, 248, 248, 0) 0%, rgba(248, 248, 248, 0) 41.46%, #F8F8F8 100%);
+      background: $white;
+      .sortiment-text-container {
+        width: 100%;
+        flex-basis: 50%;
+        @include responsive(biggerTablet, 0) {
+          order: 1;
+          flex-basis: 100%;
+        }
+
+        h2 {
+          color: $primaryMain;
+          max-width: 30ch;
+          text-transform: unset;
+          margin-bottom: 1rem;
+        }
+
+        p {
+        }
+
+        ul {
+          list-style: none;
+          position: relative;
+
+          li {
+            margin-top: 1.5rem;
+            margin-left: 1.5rem;
+
+            &:before {
+              content: url("../../assets/image/svgs/list-point.svg");
+              position: absolute;
+              margin-right: 0.5rem;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      .sortiment-image {
+        @include flex(flex, flex-start, center);
+        width: 100%;
+        flex-basis: 50%;
+        padding-right: 2rem;
+        padding-left: 30px;
+
+        @include responsive(biggerTablet, 0) {
+          flex-basis: 100%;
+          padding: 0;
+          order: 2;
+          margin-right: 30px;
+          margin-top: 1.5rem;
+        }
+
+        img {
+          object-fit: cover;
+          width: 34rem;
+          height: 20rem;
+          box-shadow: -30px 30px $primaryMain;
+
+          @include responsive(smallerDesktop, 0) {
+            margin-top: 2rem;
+            width: 100%;
+            height: 20rem;
+          }
+
+          @include responsive(biggerTablet, 0) {
+            box-shadow: 30px 30px $primaryMain;
+            margin-top: 2rem;
+
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .sortiment-text-container,
+      .sortiment-image {
+        &:nth-child(1) {
+          padding-right: 2.5rem;
+        }
+        &:nth-child(2) {
+          padding-left: 2.5rem;
+        }
+        @include responsive(biggerTablet, 0) {
+          padding: 0 !important;
+        }
+      }
+      @include responsive(smallerDesktop, 0) {
+        transform: translateX(0);
+      }
+
+      @include responsive(tablet, 0) {
+        padding: 5.5rem 5.5rem;
+      }
+
+      @include responsive(mobile, 0) {
+        padding: 0 1.25rem 5.5rem 1.25rem;
+      }
+    }
+  }
+
+  .our-machines {
+    position: relative;
+    background: $gray;
+
+    h2 {
+      padding-top: 8rem;
+      padding-bottom: 2rem;
+      text-align: center;
+    }
+
+    .our-machines-container {
+      max-width: 130rem;
+      margin: auto;
+      padding: 2rem 5.5rem 8rem 5.5rem;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      row-gap: 3rem;
+      column-gap: 3rem;
+      grid-auto-flow: row;
+      transition: all ease-in-out 0.3s;
+      justify-items: center;
+
+      @include responsive(smallerDesktop, 0) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      @include responsive(biggerTablet, 0) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @include responsive(tablet, 0) {
+        margin: 0;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      @include responsive(mobile, 0) {
+        padding: 0rem 1.25rem 8rem 1.25rem;
+      }
+
+      .our-machines-card {
+        position: relative;
+        color: $white;
+        width: 100%;
+        max-width: 35ch;
+        height: 18rem;
+        box-shadow: 20px 20px $primaryMain;
+        margin-right: 20px;
+        background-size: cover;
+        transition: transform 500ms ease;
+        overflow: hidden;
+
+        @include responsive(biggerTablet, 0) {
+          width: 100%;
+        }
+
+        @include responsive(smallerMobile, 0) {
+          width: unset;
+          min-width: 30ch;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+
+          .img-overlay {
+            img {
+              transform: scale(1.25);
+              opacity: 0.5;
+            }
+          }
+        }
+
+        .img-overlay {
+          height: 10rem;
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          &::after {
+            content: "";
+            background-color: $primaryMain;
+            background: linear-gradient(
+              180deg,
+              rgba(83, 83, 99, 0.18) 0%,
+              rgba(83, 83, 99, 0.57) 60.73%,
+              rgba(83, 83, 99, 0.6) 100%
+            );
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+          img {
+            object-fit: cover;
+            -webkit-transition: all 3s ease;
+            -moz-transition: all 3s ease;
+            -o-transition: all 3s ease;
+            -ms-transition: all 3s ease;
+            transition: all 3s ease;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+          }
+        }
+
+        .our-machines-card-content {
+          position: absolute;
+          bottom: 2rem;
+          left: 0;
+          padding: 0.5rem 2rem 0 2rem;
+
+          p {
+            text-transform: uppercase;
+            font-weight: 200;
+            font-size: 0.875rem;
+            color: #fff;
+          }
+
+          h3 {
+            max-width: 13ch;
+            word-wrap: break-word;
+            text-transform: none;
+            margin: 0.5rem 0 0 0;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: 0.8px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

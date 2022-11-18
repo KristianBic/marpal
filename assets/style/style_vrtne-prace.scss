@@ -1,0 +1,385 @@
+@import "./include/keyframes";
+@import "./include/variables";
+@import "./include/mixins";
+@import "./include/general";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  video {
+    transform: translate(30rem, -7rem);
+    @include responsive(smallerDesktop, 0) {
+      transform: translate(4rem, -15rem);
+    }
+    @media (max-width: 65em) {
+      transform: translate(-10rem, 0);
+    }
+    @include responsive(tablet, 0) {
+      transform: translate(-15rem, 0);
+    }
+    @include responsive(mobile, 0) {
+      transform: translate(-25rem, 0);
+    }
+  }
+}
+
+.body {
+  position: relative;
+  .druhy-vrtov {
+    max-width: 130rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: 7rem auto 2rem auto;
+    padding: 0 5.5rem;
+    background: #fff;
+
+    @include responsive(tablet, 0) {
+      padding: 0;
+      margin: 3rem auto;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .tabNav {
+      position: relative;
+      width: 100%;
+      height: 3.125rem;
+      display: flex;
+      align-items: center;
+      //border-bottom: $primaryMain solid 2px;
+      label {
+        white-space: nowrap;
+        font-family: Russo One;
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        line-height: 3.125rem;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        color: $primaryMain;
+        font-size: 1.125rem;
+        //margin: 0 0.3125rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $secondaryMain;
+          transform: scale(1.1);
+        }
+
+        i {
+          padding-right: 7px;
+        }
+
+        @include responsive(tablet, 0) {
+          font-size: 1rem;
+        }
+        @include responsive(smallerMobile, 0) {
+          font-size: 0.75rem;
+        }
+      }
+
+      .slider {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+        background: $primaryMain;
+        transition: all 0.3s ease;
+      }
+
+      .slider-line {
+        position: absolute;
+        height: 0.2rem;
+        width: 50%;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background: $primaryMain;
+        transition: all 0.3s ease;
+      }
+    }
+
+    section {
+      position: relative;
+
+      .content {
+        padding-block: 3rem;
+        display: none;
+        background: #fff;
+
+        &.content-1 {
+          @include responsive(tablet, 0) {
+            padding: 3rem 0 0 0;
+          }
+        }
+
+        &.content-2 {
+          @include responsive(tablet, 0) {
+            padding: 3rem 0 0 0;
+          }
+        }
+        .druhy-vrtov-text-container {
+          position: relative;
+          flex-basis: 50%;
+          @include responsive(smallerDesktop, 0) {
+            /* flex-basis: 100%;
+                        width: 100%; */
+          }
+          @include responsive(biggerTablet, 0) {
+            flex-basis: 100%;
+            width: 100%;
+            padding: 0;
+            display: block;
+          }
+          @include responsive(tablet, 0) {
+            padding: 0 calc(5.5rem - 1.25rem);
+          }
+          @include responsive(mobile, 0) {
+            padding: 0 1.25rem;
+          }
+
+          h1 {
+            @include responsive(mobile, 0) {
+              font-size: 2.125rem;
+              line-height: 2.5rem;
+              letter-spacing: 0px;
+              text-transform: uppercase;
+            }
+          }
+
+          p {
+            margin: 2rem 0;
+          }
+
+          ul {
+            position: relative;
+            list-style: none;
+
+            li {
+              margin-bottom: 1.5rem;
+              margin-left: 1.5rem;
+
+              &:before {
+                content: url("../../assets/image/svgs/list-point.svg");
+                position: absolute;
+                margin-right: 0.5rem;
+                left: 0;
+              }
+            }
+
+            .druhy-vrtov-vystraha {
+              &:before {
+                content: url("../../assets/image/icons/warning.svg");
+              }
+            }
+          }
+        }
+
+        .druhy-vrtov-image {
+          flex-basis: 50%;
+          @include flex(none, center, center);
+          right: 0;
+          @include responsive(smallerDesktop, 0) {
+            margin-top: 2rem;
+            /* flex-basis: 100%;
+                        width: 100%; */
+            display: block;
+          }
+          @include responsive(biggerTablet, 0) {
+            flex-basis: 100%;
+            width: 100%;
+            padding: 0;
+          }
+          @include responsive(tablet, 0) {
+            padding: 0 calc(5.5rem - 1.25rem);
+          }
+          @include responsive(mobile, 0) {
+            padding: 0 1.25rem;
+          }
+          video {
+            width: 25rem;
+            height: 25rem;
+            box-shadow: 16px 16px $primaryMain;
+            margin-left: 2rem;
+            @include responsive(smallerDesktop, 0) {
+              //margin-left: 0;
+              width: 85%;
+              height: 85%;
+            }
+
+            @include responsive(biggerTablet, 0) {
+              margin-left: 0;
+              opacity: 1;
+              width: 100%;
+              height: 100%;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #bez_klucu:checked ~ .tabNav label.bez_klucu,
+  #na_kluc:checked ~ .tabNav label.na_kluc {
+    color: #fff;
+  }
+
+  #na_kluc:checked ~ .tabNav .slider {
+    left: 50%;
+  }
+
+  #bez_klucu:checked ~ .tabNav label.bez_klucu,
+  #na_kluc:checked ~ .tabNav label.na_kluc {
+    color: #fff;
+  }
+
+  #na_kluc:checked ~ .tabNav .slider-line {
+    right: 50%;
+  }
+
+  #bez_klucu:checked ~ section .content-1,
+  #na_kluc:checked ~ section .content-2 {
+    @include flex(flex, center, center);
+    flex-wrap: wrap;
+  }
+
+  .roadmap {
+    margin-top: 2rem;
+    background: linear-gradient(
+      360deg,
+      #f8f8f8 90.68%,
+      rgba(248, 248, 248, 0) 100%
+    );
+    width: 100%;
+    position: relative;
+    @include flex(flex, center, center);
+
+    .roadmap-container {
+      max-width: 130rem;
+      margin: auto;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      padding: 0 0 3rem 0;
+
+      &.one {
+        @include responsive(tablet, 0) {
+          display: none;
+        }
+      }
+
+      &.two {
+        display: none;
+
+        @include responsive(tablet, 0) {
+          padding: 0 0 2rem 0;
+          @include flex(flex, center, center);
+          width: 100%;
+        }
+        @include responsive(mobile, 0) {
+          transform: translateX(-1rem);
+        }
+      }
+    }
+  }
+}
+
+.motto {
+  margin: 0 auto;
+  position: relative;
+  margin-top: 4rem;
+  h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: $primaryMain;
+    font-family: $fontTitles;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 2.6rem;
+    text-transform: none;
+  }
+  p {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  @include responsive(tablet, 0) {
+    width: calc(100% - 2rem);
+  }
+}
+
+h1.mainTitle {
+  font-family: $fontTitles;
+  text-align: center;
+  color: $secondaryMain;
+  font-size: 1.8rem;
+}
+
+.mainParagraph {
+  text-align: center;
+}
+
+.precoContainer {
+  @include flex(column, flex-start, center);
+  margin: 4rem auto 2rem auto;
+  max-width: 47rem;
+  .cards {
+    display: grid;
+    width: 100%;
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 50%);
+    .card {
+      padding: 1rem;
+      @include flex(row, flex-start, center);
+      background: #fff;
+      box-shadow: 0px 16px 72px rgba(65, 65, 65, 0.15);
+      margin-bottom: 1rem;
+      &:nth-child(odd) {
+        margin-right: 0.5rem;
+      }
+      &:nth-child(even) {
+        margin-left: 0.5rem;
+      }
+      .icon {
+        svg {
+          width: 65px;
+          height: auto;
+        }
+      }
+      .popis {
+        padding-left: 1rem;
+        h3 {
+          font-size: 1.1rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  @include responsive(tablet, 0) {
+    .cards {
+      display: block;
+      width: 70%;
+      .card {
+        margin-inline: 0 !important;
+      }
+    }
+  }
+  @include responsive(tablet, 0) {
+    .cards {
+      width: 90%;
+    }
+  }
+}

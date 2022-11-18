@@ -1,0 +1,283 @@
+@import "./include/keyframes";
+@import "./include/variables";
+@import "./include/mixins";
+@import "./include/general";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  video {
+    transform: translate(30rem, 3rem);
+    @include responsive(smallerDesktop, 0) {
+      transform: translate(3rem, -4rem);
+    }
+    @media (max-width: 65em) {
+      transform: translate(-7rem, 0);
+    }
+    @include responsive(tablet, 0) {
+      transform: translate(-15rem, 0);
+    }
+    @include responsive(mobile, 0) {
+      transform: translate(-20rem, 0);
+    }
+  }
+}
+
+.body {
+  position: relative;
+  min-height: calc(100vh - 25rem);
+  .sortiment {
+    position: relative;
+    width: 100%;
+    padding-top: 7rem;
+    .title,
+    .parag {
+      text-align: center;
+      display: block;
+      margin: auto;
+    }
+    .parag {
+      margin-top: 2rem;
+    }
+
+    .sortiment-container {
+      background: linear-gradient(
+        180deg,
+        rgba(248, 248, 248, 0) 0%,
+        rgba(248, 248, 248, 0) 41.46%,
+        #f8f8f8 100%
+      );
+      width: 100%;
+
+      .sortiment-content {
+        max-width: 100rem;
+        margin: auto;
+        z-index: 0;
+        padding: 5.5rem;
+
+        @include flex(none, center, center);
+        flex-wrap: wrap;
+        position: relative;
+
+        @include responsive(tablet, 0) {
+          padding: 5.5rem 5.5rem;
+        }
+
+        @include responsive(mobile, 0) {
+          padding: 5.5rem 1.25rem;
+        }
+
+        .sortiment-text-container {
+          width: 100%;
+          flex-basis: 50%;
+
+          @include responsive(biggerTablet, 0) {
+            flex-basis: 100%;
+          }
+
+          h2 {
+            color: $primaryMain;
+            max-width: 30ch;
+            text-transform: unset;
+          }
+
+          p {
+            margin-top: 2.25rem;
+            margin-bottom: 2.25rem;
+            max-width: 45ch;
+          }
+
+          .button {
+            padding: 0.4rem 2rem;
+            transition: 0.6s;
+            text-transform: uppercase;
+            font-weight: 400;
+
+            &:hover {
+              background-color: transparent;
+              color: $primaryMain;
+            }
+          }
+        }
+
+        .sortiment-image {
+          @include flex(flex, flex-end, center);
+          width: 100%;
+          flex-basis: 50%;
+          padding-left: 2rem;
+          padding-right: 30px;
+
+          @include responsive(biggerTablet, 0) {
+            flex-basis: 100%;
+            padding: 0;
+            padding-right: 30px;
+          }
+
+          img {
+            object-fit: cover;
+            width: 34rem;
+            height: 20rem;
+            box-shadow: 30px 30px $primaryMain;
+
+            @include responsive(smallerDesktop, 0) {
+              margin-top: 2rem;
+              width: 100%;
+              height: 20rem;
+            }
+
+            @include responsive(biggerTablet, 0) {
+              margin-top: 4rem;
+              width: 100%;
+              height: 20rem;
+            }
+
+            @include responsive(mobile, 0) {
+              max-height: 10rem;
+            }
+          }
+
+          &.two {
+            @include flex(flex, flex-start, center);
+            padding-left: 30px;
+            padding-right: 2rem;
+
+            @include responsive(biggerTablet, 0) {
+              padding: 0;
+              padding-right: 30px;
+            }
+
+            img {
+              box-shadow: -30px 30px $primaryMain;
+
+              @include responsive(biggerTablet, 0) {
+                box-shadow: 30px 30px $primaryMain;
+              }
+            }
+          }
+        }
+
+        .sortiment-text-container,
+        .sortiment-image {
+          &:nth-child(1) {
+            padding-right: 2.5rem;
+          }
+          &:nth-child(2) {
+            padding-left: 2.5rem;
+          }
+          @include responsive(biggerTablet, 0) {
+            padding: 0 !important;
+          }
+        }
+      }
+
+      &.two {
+        background: $white;
+
+        .sortiment-text-container {
+          @include responsive(biggerTablet, 0) {
+            order: 1;
+          }
+        }
+
+        .sortiment-image {
+          @include responsive(biggerTablet, 0) {
+            order: 2;
+          }
+        }
+      }
+
+      &.three {
+        background: $gray;
+      }
+    }
+    @include responsive(smallerDesktop, 0) {
+      .title,
+      .parag {
+        padding: 0 5.5rem;
+      }
+    }
+    @include responsive(mobile, 0) {
+      .title {
+        padding: 0 0.5rem;
+      }
+      .parag {
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  .doplnkove-sluzby {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @include flex(flex, center, center);
+    background: url("../../assets/image/images/doplnkove-sluzby-img.png");
+    overflow: hidden;
+    background-size: cover;
+
+    .doplnkove-sluzby-container {
+      max-width: 130rem;
+      margin: auto;
+      position: relative;
+      width: 100%;
+      padding: 4rem;
+      margin: 10rem 5.5rem;
+      background: $white;
+      transition: all 0.3s ease;
+      box-shadow: 0px 12px 17px rgba(183, 183, 183, 0.14),
+        0px 5px 22px rgba(183, 183, 183, 0.12),
+        0px 7px 8px rgba(183, 183, 183, 0.2);
+
+      @include responsive(tablet, 0) {
+        margin: 10rem 5.5rem;
+        padding: 2rem;
+      }
+
+      @include responsive(mobile, 0) {
+        margin: 10rem 1.25rem;
+      }
+
+      p {
+        margin-top: 2.25rem;
+        margin-bottom: calc(2.25rem - 1.5rem);
+      }
+
+      .doplnkove-sluzby-points {
+        position: relative;
+        display: flex;
+        @include flex(flex, row, center);
+
+        @include responsive(tablet, 0) {
+          flex-wrap: wrap;
+        }
+
+        ul {
+          position: relative;
+          flex-basis: 50%;
+          list-style: none;
+
+          @include responsive(tablet, 0) {
+            flex-basis: 100%;
+          }
+
+          li {
+            margin-top: 1.5rem;
+            margin-left: 1.5rem;
+
+            &:before {
+              content: url("../../assets/image/svgs/list-point.svg");
+              position: absolute;
+              margin-right: 0.5rem;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
