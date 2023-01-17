@@ -49,8 +49,8 @@ if ($isAdminPage) { ?>
     <html lang="sk">
 
     <head>
-        <meta name="robots" content="noindex" />
-        <meta charset="utf-8" />
+        <meta name="robots" content="noindex">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Marpal admin</title>
         <?php require_once("theme/include/links_admin.php"); ?>
@@ -64,8 +64,8 @@ if ($isAdminPage) { ?>
             <?php require_once("theme/include/navbar_admin.php"); ?>
             <?php require_once("theme/pages/admin/" . $page . ".php"); ?>
         </main>
+        <?php require_once("theme/include/scripts_admin.php"); ?>
     </body>
-    <?php require_once("theme/include/scripts_admin.php"); ?>
 
     </html>
 
@@ -84,10 +84,10 @@ if ($isAdminPage) { ?>
     <html lang="sk">
 
     <head>
-        <meta name="google-site-verification" content="6xxrM04zslTouuWew5gHISq1Zhw7rfaToAlCRFRrJag" />
-        <meta name="facebook-domain-verification" content="c7b3pfoxbmfghce9owz870mq6kvmh9" />
+        <meta name="google-site-verification" content="6xxrM04zslTouuWew5gHISq1Zhw7rfaToAlCRFRrJag">
+        <meta name="facebook-domain-verification" content="c7b3pfoxbmfghce9owz870mq6kvmh9">
         <?php if ($page == "login") { ?>
-            <meta name="robots" content="noindex" />
+            <meta name="robots" content="noindex">
         <?php } else { ?>
             <meta name=”robots” content="index, follow">
         <?php } ?>
@@ -96,7 +96,7 @@ if ($isAdminPage) { ?>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="<?php echo $pageDescription; ?>">
         <meta name="keywords" content="vrtaniestudni.eu, marpal.eu, vŕtanie studní, vrtanie studni, stavebne prace, kysucke nove mesto, stavebne prace knm a okolie, stavba rodinných domov, stavebné vrty, geologické vrty, hydraulická ruka, zemné a výkopové práce, pavol kubala">
-        <meta name="author" content="Michal Čečko">
+        <meta name="author" content="Kristián Bičanovský">
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_URL; ?>assets/image/icons/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="<?php echo BASE_URL; ?>assets/image/icons/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="<?php echo BASE_URL; ?>assets/image/icons/favicon/favicon-16x16.png">

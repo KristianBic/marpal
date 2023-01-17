@@ -1,9 +1,9 @@
 <div class="body">
     <div class="hero-services">
-        <img class="dots one" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots two" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
+        <img class="dots one" alt="dots" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg">
+        <img class="dots two" alt="dots" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg">
         <a href="<?php echo BASE_URL; ?>domov">
-            <img class="hero-logo" src="<?php echo BASE_URL; ?>assets/image/images/marpal_png.png" alt="Marpal logo" /></a>
+            <img class="hero-logo" src="<?php echo BASE_URL; ?>assets/image/images/marpal_png.png" alt="Marpal logo"></a>
         <div class="hero-container">
             <div class="hero-backgroundImage">
                 <div class="mediaContainer">
@@ -12,7 +12,7 @@
                     </video>
                 </div>
             </div>
-            <img class="hero-rectangle" src="<?php echo BASE_URL; ?>assets/image/svgs/HeroRectangleBigger.svg" />
+            <img class="hero-rectangle" src="<?php echo BASE_URL; ?>assets/image/svgs/HeroRectangleBigger.svg" alt="rectangle">
             <div class="text-container">
                 <h1>Stavebné práce</h1>
                 <p>Naša stavebná činnosť je zameraná na poskytovanie kvalitných a komplexných služieb v oblasti realizácie tehlových a betónových (monolitických) stavieb od ich založenia až po finálny dizajn.</p>
@@ -23,16 +23,16 @@
     <div class="sortiment" id="sortiment">
         <h2 class="title">postavíme všetko</h2>
         <p class="parag">Vykonávame <b>všetky stavebné práce</b> v rámci hrubej a pridruženej stavebnej výroby (HSV a PSV). Využívame <b>moderné a kvalitné</b> technológie.</p>
-        <img class="dots sixteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots seventeen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots eighteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots nineteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots twenty" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots twentyone" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots twentytwo" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots twentythree" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots twentyfour" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots twentyfive" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
+        <img class="dots sixteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots seventeen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots eighteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots nineteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots twenty" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots twentyone" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots twentytwo" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots twentythree" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots twentyfour" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots twentyfive" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
         <div class="sortiment-container">
             <div class="sortiment-content">
                 <div class="sortiment-text-container">
@@ -41,14 +41,14 @@
                     <a class="button" href="<?php echo BASE_URL; ?>galeria">Projekty</a>
                 </div>
                 <div class="sortiment-image">
-                    <img src="<?php echo BASE_URL; ?>assets/image/images/stavebne-prace-StavbaDomu.jpg" alt="Stavanie domu" />
+                    <img src="<?php echo BASE_URL; ?>assets/image/images/stavebne-prace-StavbaDomu.jpg" alt="Stavanie domu">
                 </div>
             </div>
         </div>
         <div class="sortiment-container two">
             <div class="sortiment-content two">
                 <div class="sortiment-image two">
-                    <img src="<?php echo BASE_URL; ?>assets/image/images/stavebne-prace-RekonstrukciaDomu.jpg" alt="Rekonštrukcia budov" />
+                    <img src="<?php echo BASE_URL; ?>assets/image/images/stavebne-prace-RekonstrukciaDomu.jpg" alt="Rekonštrukcia budov">
                 </div>
                 <div class="sortiment-text-container">
                     <h2>Rekonštrukcia a modernizácia budov</h2>
@@ -65,7 +65,7 @@
                     <a class="button" href="<?php echo BASE_URL; ?>galeria">Projekty</a>
                 </div>
                 <div class="sortiment-image">
-                    <img src="<?php echo BASE_URL; ?>assets/image/images/stavebne-prace-RealizaciaStavieb.jpg" alt="Realizacia stavieb" />
+                    <img src="<?php echo BASE_URL; ?>assets/image/images/stavebne-prace-RealizaciaStavieb.jpg" alt="Realizacia stavieb">
                 </div>
             </div>
         </div>
@@ -93,10 +93,10 @@
         </div>
     </div>
     <div class="contactUs">
-        <img class="dots thirteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots fourteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="dots fifteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" />
-        <img class="contactUs-image" src="<?php echo BASE_URL; ?>assets/image/images/contactUs.png" alt="" />
+        <img class="dots thirteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots fourteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="dots fifteen" src="<?php echo BASE_URL; ?>assets/image/icons/dots.svg" alt="dots">
+        <img class="contactUs-image" src="<?php echo BASE_URL; ?>assets/image/images/contactUs.png" alt="dots">
         <div class="contactUs-container">
             <div class="contactUs-content">
                 <h3>Oslovila Vás naša ponuka?</h3>

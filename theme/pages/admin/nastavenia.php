@@ -16,7 +16,8 @@
                 <h6 class="mb-0 title-bolder text-nowrap">Sídlo firmy</h6>
               </div>
               <div class="col-md-0 pt-3">
-                <input id="sidlo" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="Adresa sídla" value="<?php $item = new KontaktInfo($db, -1, "sidlo"); echo $item->getHodnota(); ?>">
+                <input id="sidlo" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="Adresa sídla" value="<?php $item = new KontaktInfo($db, -1, "sidlo");
+                                                                                                                                                                        echo $item->getHodnota(); ?>">
                 <div class="err sidloError"></div>
               </div>
             </div>
@@ -25,7 +26,8 @@
                 <h6 class="mb-0 title-bolder text-nowrap">Korešpondenčná adresa</h6>
               </div>
               <div class="col-md-0 pt-3">
-                <input id="korAdresa" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="Kor. adresa" value="<?php $item = new KontaktInfo($db, -1, "korAdresa"); echo $item->getHodnota(); ?>">
+                <input id="korAdresa" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="Kor. adresa" value="<?php $item = new KontaktInfo($db, -1, "korAdresa");
+                                                                                                                                                                            echo $item->getHodnota(); ?>">
                 <div class="err korAdresaError"></div>
               </div>
             </div>
@@ -34,7 +36,8 @@
                 <h6 class="mb-0 title-bolder text-nowrap">IBAN</h6>
               </div>
               <div class="col-md-0 pt-3">
-                <input id="iban" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="IBAN" value="<?php $item = new KontaktInfo($db, -1, "iban"); echo $item->getHodnota(); ?>">
+                <input id="iban" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="IBAN" value="<?php $item = new KontaktInfo($db, -1, "iban");
+                                                                                                                                                                echo $item->getHodnota(); ?>">
                 <div class="err ibanError"></div>
               </div>
             </div>
@@ -47,7 +50,8 @@
                 <h6 class="mb-0 title-bolder text-nowrap">Konateľ firmy</h6>
               </div>
               <div class="col-md-0 pt-3">
-                <input id="konatel" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="Meno a priezvisko" value="<?php $item = new KontaktInfo($db, -1, "konatel"); echo $item->getHodnota(); ?>">
+                <input id="konatel" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="Meno a priezvisko" value="<?php $item = new KontaktInfo($db, -1, "konatel");
+                                                                                                                                                                                echo $item->getHodnota(); ?>">
                 <div class="err konatelError"></div>
               </div>
             </div>
@@ -56,7 +60,8 @@
                 <h6 class="mb-0 title-bolder text-nowrap">IČO</h6>
               </div>
               <div class="col-md-0 pt-3">
-                <input id="ico" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="IČO" value="<?php $item = new KontaktInfo($db, -1, "ico"); echo $item->getHodnota(); ?>">
+                <input id="ico" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="IČO" value="<?php $item = new KontaktInfo($db, -1, "ico");
+                                                                                                                                                              echo $item->getHodnota(); ?>">
                 <div class="err icoError"></div>
               </div>
             </div>
@@ -65,7 +70,8 @@
                 <h6 class="mb-0 title-bolder text-nowrap">IČ DPH</h6>
               </div>
               <div class="col-md-0 pt-3">
-                <input id="icdph" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="IČDPH" value="<?php $item = new KontaktInfo($db, -1, "icdph"); echo $item->getHodnota(); ?>">
+                <input id="icdph" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100 " placeholder="IČDPH" value="<?php $item = new KontaktInfo($db, -1, "icdph");
+                                                                                                                                                                  echo $item->getHodnota(); ?>">
                 <div class="err icdphError"></div>
               </div>
             </div>

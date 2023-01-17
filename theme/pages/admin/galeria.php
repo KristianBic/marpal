@@ -29,12 +29,18 @@
                 while ($prispevok = $prispevky->getNext()) { ?>
                   <div class="col-xl-4 col-sm-6 mb-4 prispevokContainer" data-id="<?php echo $prispevok->getId(); ?>">
                     <div class="post-card border-radius-lg">
+                      <span class="update-prispevok">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 15H6L14.4697 6.53034C14.7626 6.23745 14.7626 5.76257 14.4697 5.46968L12.5303 3.53034C12.2374 3.23745 11.7626 3.23745 11.4697 3.53034L3 12V15Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M9 6L12 9" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
                       <span class="delete-prispevok">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M11.25 12H14.25V13.5H11.25V12ZM11.25 6H16.5V7.5H11.25V6ZM11.25 9H15.75V10.5H11.25V9ZM2.25 13.5C2.25 14.325 2.925 15 3.75 15H8.25C9.075 15 9.75 14.325 9.75 13.5V6H2.25V13.5ZM10.5 3.75H8.25L7.5 3H4.5L3.75 3.75H1.5V5.25H10.5V3.75Z" fill="white" />
                         </svg>
                       </span>
-                      <h6 class="post-card-title"><?php echo $prispevok->getNadpis(); ?></h6>
+                      <h6 class="post-card-title" data-title="titleeee"><?php echo $prispevok->getNadpis(); ?></h6>
                       <div class="post-stats">
                         <div class="post-type gallery-type" style="--farba: <?php echo $prispevok->getFarba(); ?>"><?php echo $prispevok->getTyp(); ?></div>
                         <p class="post-text"><?php echo $prispevok->getDatumPridania(); ?></p>
@@ -85,7 +91,7 @@
                             <?php } else { ?>
                               <div class="overlay">
                                 <a href="<?php echo BASE_URL; ?>assets/image/images/galerie/<?php echo $prispevok->getNadpis() . "_" . $prispevok->getDatumPridania("dmY_His"); ?>/<?php echo $obrazok; ?>" data-fslightbox="<?php echo $prispevok->getNadpis() . "_" . $prispevok->getDatumPridania("dmY_His"); ?>">
-                                  <img src="<?php echo BASE_URL; ?>assets/image/images/galerie/<?php echo $prispevok->getNadpis() . "_" . $prispevok->getDatumPridania("dmY_His"); ?>/<?php echo $obrazok; ?>" />
+                                  <img alt="prispevok" src="<?php echo BASE_URL; ?>assets/image/images/galerie/<?php echo $prispevok->getNadpis() . "_" . $prispevok->getDatumPridania("dmY_His"); ?>/<?php echo $obrazok; ?>">
                                 </a>
                               </div>
                             <?php } ?>
@@ -105,7 +111,7 @@
                 <?php }
               } else { ?>
                 <div class="emptyContainer">
-                  <img src="<?php echo BASE_URL; ?>assets/image/icons/noImages.svg">
+                  <img alt="noImg" src="<?php echo BASE_URL; ?>assets/image/icons/noImages.svg">
                   <h3>Žiadne príspevky.</h3>
                   <p>Neevidujeme žiadne pridané príspevky.</p>
                 </div>
@@ -116,7 +122,7 @@
       </div>
     </div>
   </div>
-  </div>
+
 
 
   <div class="container-fluid py-0 addGalery" id="addGaleryO">
@@ -141,7 +147,7 @@
                 </div>
 
                 <div class="col-md-0 mb-md-0 mb-4 pt-3">
-                  <select id="typ" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100" placeholder="Typ príspevku">
+                  <select id="typ" class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row w-100">
                     <option value="text" selected>Text</option>
                     <option value="galeria">Galéria fotiek</option>
                     <option value="medium">Samostatné video alebo fotka</option>
@@ -190,7 +196,7 @@
                 </div>
                 <input type="file" id="nahlad" name="file" accept=".jpg, .jpeg, .png" style="width: 0; opacity:0; height:0">
                 <div class="col-md-6 mb-md-0 mb-4 w-100">
-                  <div class="border-radius-lg d-flex align-items-center flex-row w-100"><label for="nahlad" type="button" name="file" href="javascript:;" class="labelBTN border w-100 h-100 m-0 card card-body align-items-center">+ Pridaj médium</label></div>
+                  <div class="border-radius-lg d-flex align-items-center flex-row w-100"><label for="nahlad" class="labelBTN border w-100 h-100 m-0 card card-body align-items-center">+ Pridaj médium</label></div>
                 </div>
               </div>
             </div>
@@ -211,7 +217,7 @@
                 </div>
                 <input multiple type="file" id="galeria" name="galeria[]" accept=".jpg, .jpeg, .png" style="width: 0; opacity:0; height:0">
                 <div class="col-md-6 mb-md-0 mb-4 w-100">
-                  <div class=" border-radius-lg d-flex align-items-center flex-row w-100"> <label class="labelBTN border w-100 h-100 m-0 card card-body align-items-center " for="galeria" type="button" name="filePreviwImages" href="javascript:;">+ Pridaj obrázky do galérie</label></div>
+                  <div class=" border-radius-lg d-flex align-items-center flex-row w-100"> <label class="labelBTN border w-100 h-100 m-0 card card-body align-items-center " for="galeria">+ Pridaj obrázky do galérie</label></div>
                 </div>
               </div>
             </div>
@@ -228,23 +234,16 @@
               <div class="col-md-2 mb-md-0 mb-4 ">
                 <!-- bez slidov dat prec form-switch  a pridat form-check-->
                 <div class="form-check form-switch ps-0">
-                  <input disabled="disabled" type="checkbox" id="fb" name="ciel[]" value="fb" class="form-check-input ms-auto"></input>
+                  <input disabled="disabled" type="checkbox" id="fb" name="ciel[]" value="fb" class="form-check-input ms-auto">
                   <label class="form-check-label text-body text-truncate mb-0" for="fb">Facebook</label><br>
                 </div>
               </div>
               <div class="col-md-2 mb-md-0 mb-4">
                 <!-- bez slidov dat prec form-switch -->
                 <div class="form-check form-switch ps-0">
-                  <input type="checkbox" id="web" name="ciel[]" value="web" class="form-check-input ms-auto"></input>
-                  <label class="form-check-label text-body text-truncate mb-0" for="web">Webstránka</label><br>
+                  <input id="webCHB" type="checkbox" name="ciel[]" value="web" class="form-check-input ms-auto">
+                  <label class="form-check-label text-body text-truncate mb-0" for="webCHB">Webstránka</label><br>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-header pb-0 p-3">
-            <div class="row">
-              <div class="col-6 d-flex align-items-center">
-                <h6 class="mb-0"></h6>
               </div>
             </div>
           </div>

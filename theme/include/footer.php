@@ -1,7 +1,7 @@
 <div class="footer" id="footer">
     <div class="footer-container">
         <a class="footer-logo" href="<?php echo BASE_URL; ?>domov">
-            <img src="<?php echo BASE_URL; ?>assets/image/images/marpal_png.png" alt="Marpal logo" /></a>
+            <img src="<?php echo BASE_URL; ?>assets/image/images/marpal_png.png" alt="Marpal logo"></a>
         <div class="footer-columnOfLinks">
             <h4>Odkazy</h4>
             <ul>

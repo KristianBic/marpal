@@ -3,10 +3,11 @@ require_once("./theme/classes/Prispevok.php");
 ?>
 <div class="body">
     <div class="hero">
-        <img class="dots one" src="./assets/image/icons/dots.svg" />
-        <img class="dots two" src="./assets/image/icons/dots.svg" />
+        <img class="dots one" src="./assets/image/icons/dots.svg" alt="Dots">
+        <img class="dots two" src="./assets/image/icons/dots.svg" alt="Dots">
         <a href="<?php echo BASE_URL; ?>domov">
-            <img class="hero-logo" src="./assets/image/images/marpal_png.png" alt="Marpal logo" /></a>
+            <img class="hero-logo" src="./assets/image/images/marpal_png.png" alt="Marpal logo">
+        </a>
         <div class="hero-container">
             <!-- Slider main container -->
             <div class="swiper">
@@ -52,7 +53,7 @@ require_once("./theme/classes/Prispevok.php");
                     </svg>
                 </div>
 
-                <img class="hero-rectangle" src="./assets/image/svgs/HeroRectangleBigger.svg" />
+                <img class="hero-rectangle" src="./assets/image/svgs/HeroRectangleBigger.svg" alt="rectangle">
                 <div class="text-Container">
                     <div class="text" data-slide_number="1">
                         <h1>špecialisti na vŕtanie studní</h1>
@@ -77,18 +78,18 @@ require_once("./theme/classes/Prispevok.php");
 
     </div>
     <div class="services">
-        <img class="dots three" src="./assets/image/icons/dots.svg" />
-        <img class="dots four" src="./assets/image/icons/dots.svg" />
-        <img class="dots five" src="./assets/image/icons/dots.svg" />
-        <img class="dots six" src="./assets/image/icons/dots.svg" />
-        <img class="dots seven" src="./assets/image/icons/dots.svg" />
-        <img class="dots eight" src="./assets/image/icons/dots.svg" />
+        <img class="dots three" src="./assets/image/icons/dots.svg" alt="Dots">
+        <img class="dots four" src="./assets/image/icons/dots.svg" alt="Dots">
+        <img class="dots five" src="./assets/image/icons/dots.svg" alt="Dots">
+        <img class="dots six" src="./assets/image/icons/dots.svg" alt="Dots">
+        <img class="dots seven" src="./assets/image/icons/dots.svg" alt="Dots">
+        <img class="dots eight" src="./assets/image/icons/dots.svg" alt="Dots">
         <h2>Ponuka našich služieb</h2>
         <div class="services-container">
             <div class="service-card">
                 <a class="service-card-link" href="<?php echo BASE_URL; ?>vrtne-prace">
                     <div class="img-overlay">
-                        <img src="./assets/image/images/homepage-services-vrtanie.png" alt="Vŕtanie studne" />
+                        <img src="./assets/image/images/homepage-services-vrtanie.png" alt="Vŕtanie studne">
                     </div>
                     <h3>Vrtné práce</h3>
                     <p>Firma sa zameriava na vrtanie studní, vrty pre tepelné čerpadlá, geologické, prieskumné, odvodňovacie a stavebné vrty. </p>
@@ -101,7 +102,7 @@ require_once("./theme/classes/Prispevok.php");
             <div class="service-card">
                 <a class="service-card-link" href="<?php echo BASE_URL; ?>stavebne-prace">
                     <div class="img-overlay">
-                        <img src="./assets/image/images/homepage-services-stavba.png" alt="Stavebné práce" />
+                        <img src="./assets/image/images/homepage-services-stavba.png" alt="Stavebné práce">
                     </div>
                     <h3>Stavebné práce</h3>
                     <p>Ponúkame realizáciu všetkých druhov stavieb, od stavieb rodinných domov až po rekonštrukciu a modernizáciu všetkých typov budov.</p>
@@ -114,15 +115,14 @@ require_once("./theme/classes/Prispevok.php");
             <div class="service-card">
                 <a class="service-card-link" href="<?php echo BASE_URL; ?>zemne-vykopove-prace">
                     <div class="img-overlay">
-                        <img src="./assets/image/images/homepage-services-vykop.png" alt="Výkopové práce" />
+                        <img src="./assets/image/images/homepage-services-vykop.png" alt="Výkopové práce">
                     </div>
                     <h3>Zemné a výkopové práce</h3>
                     <p>Poskytujeme širokú škálu zemných, výkopových, búracích a demolačných prác. Ťažko dostupný terén nieje prekážkou.</p>
                     <div class="button"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 8.66667H11.4467L9.06 11.06L10 12L14 8L10 4L9.06 4.94L11.4467 7.33333H2V8.66667Z" fill="#2E74FF" />
                         </svg>
-                        Zisti viac</d>
-                    </div>
+                        Zisti viac</div>
                 </a>
             </div>
         </div>
@@ -227,12 +227,12 @@ require_once("./theme/classes/Prispevok.php");
             </div>
         </div>
         <div class="gallery">
-            <img class="dots nine" src="./assets/image/icons/dots.svg" />
-            <img class="dots ten" src="./assets/image/icons/dots.svg" />
-            <img class="dots eleven" src="./assets/image/icons/dots.svg" />
-            <img class="dots twelve" src="./assets/image/icons/dots.svg" />
+            <img class="dots nine" src="./assets/image/icons/dots.svg" alt="Dots">
+            <img class="dots ten" src="./assets/image/icons/dots.svg" alt="Dots">
+            <img class="dots eleven" src="./assets/image/icons/dots.svg" alt="Dots">
+            <img class="dots twelve" src="./assets/image/icons/dots.svg" alt="Dots">
             <div class="gallery-image">
-                <img src="./assets/image/images/gallery_home-page.png" alt="Sídlo Marpalu" />
+                <img src="./assets/image/images/gallery_home-page.png" alt="Sídlo Marpalu">
                 <h2>Galéria PROJEKTOV</h2>
                 <p>Nahliadnite bližšie do galérie naších úspešných projektov.</p>
             </div>
@@ -255,17 +255,17 @@ require_once("./theme/classes/Prispevok.php");
                                                 <source src="./assets/image/images/galerie/<?php echo $prispevok->getNadpis() . "_" . $prispevok->getDatumPridania("dmY_His"); ?>/<?php echo $prispevok->getNahlad(); ?>" type="video/mp4">
                                             </video>
                                         <?php } else { ?>
-                                            <img src="./assets/image/images/galerie/<?php echo $prispevok->getNadpis() . "_" . $prispevok->getDatumPridania("dmY_His"); ?>/<?php echo $prispevok->getNahlad(); ?>" />
+                                            <img alt="galeryPost" src="./assets/image/images/galerie/<?php echo $prispevok->getNadpis() . "_" . $prispevok->getDatumPridania("dmY_His"); ?>/<?php echo $prispevok->getNahlad(); ?>">
                                         <?php } ?>
                                         <p class="gallery-date"><?php echo $prispevok->getDatumPridania("j.n.Y") ?></p>
                                         <div class="gallery-card-content">
                                             <p>projekt</p>
                                             <h4><?php echo $prispevok->getNadpis(); ?></h4>
-                                            <button>Zobraziť
+                                            <div class="galButton">Zobraziť
                                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M1.75 7.58333L10.0158 7.58333L7.9275 9.6775L8.75 10.5L12.25 7L8.75 3.5L7.9275 4.3225L10.0158 6.41667L1.75 6.41667V7.58333Z" fill="white" />
                                                 </svg>
-                                            </button>
+                                            </div>
                                         </div>
                                     </a>
                                 </div>
@@ -287,10 +287,10 @@ require_once("./theme/classes/Prispevok.php");
             <?php } ?>
 
             <div class="contactUs">
-                <img class="dots thirteen" src="./assets/image/icons/dots.svg" />
-                <img class="dots fourteen" src="./assets/image/icons/dots.svg" />
-                <img class="dots fifteen" src="./assets/image/icons/dots.svg" />
-                <img class="contactUs-image" src="./assets/image/images/contactUs.png" alt="" />
+                <img class="dots thirteen" src="./assets/image/icons/dots.svg" alt="Dots">
+                <img class="dots fourteen" src="./assets/image/icons/dots.svg" alt="Dots">
+                <img class="dots fifteen" src="./assets/image/icons/dots.svg" alt="Dots">
+                <img class="contactUs-image" src="./assets/image/images/contactUs.png" alt="Dots">
                 <div class="contactUs-container">
                     <div class="contactUs-content">
                         <h3>Oslovila Vás naša ponuka?</h3>
@@ -300,3 +300,5 @@ require_once("./theme/classes/Prispevok.php");
                 </div>
             </div>
         </div>
+    </div>
+</div>

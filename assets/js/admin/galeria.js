@@ -6,6 +6,14 @@ function addGalleryOpen() {
 	document.getElementById("addGaleryO").style.display = "block";
 }
 
+function updateGalleryClose() {
+	document.getElementById("updateGaleryO").style.display = "none";
+}
+
+function updateGalleryOpen() {
+	document.getElementById("updateGaleryO").style.display = "block";
+}
+
 const input = document.getElementById("nahlad");
 const input2 = document.getElementById("galeria");
 
@@ -402,4 +410,107 @@ $(document).on("click", ".delete-prispevok", function () {
 			location.reload();
 		},
 	});
+});
+
+var updatedID = 0;
+$(document).on("click", ".update-prispevok", function () {
+	var id = $(this).closest(".prispevokContainer").data("id");
+	updatedID = id;
+	var title;
+	var typ;
+	var popis;
+
+	$.ajax({
+		url: base_url + "theme/ajax/getPrispevok.php",
+		type: "POST",
+		data: { id: id },
+		datatype: "json",
+
+		success: function (data) {
+			var duce = jQuery.parseJSON(data);
+			title = duce.nadpis;
+			typ = duce.typ;
+			popis = duce.popis;
+
+			$(".addPostBtn").addClass("updPostBtn");
+			$(".updPostBtn").removeClass("addPostBtn");
+			$(".updPostBtn").text("Upraviť príspevok");
+
+			$('input[id="nadpis"]').val(title);
+			$('select[id="typ"]').val(typ).change();
+			$("#tinymce > p").val(atob(popis));
+			tinymce.activeEditor.setContent(atob(popis));
+			$('input[id="webCHB"]').prop("checked", true);
+			addGalleryOpen();
+		},
+	});
+});
+
+$(document).on("click", ".updPostBtn", function () {
+	let error = 0;
+	let formData = new FormData();
+	let spinner = $(this).find(".spinnerContainer");
+	let container = $(".addGalery");
+	let thiss = $(this);
+
+	container.find(".err").html("");
+
+	let typ = $("#typ").val();
+	formData.append("typ", typ);
+
+	let nadpis = $("#nadpis").val();
+	if ($.trim(nadpis) == "") {
+		error++;
+		container.find(".nadpisError").html("Nezadali ste nadpis!");
+	} else {
+		formData.append("nadpis", nadpis);
+	}
+
+	let popis = tinymce.get("popis").getContent({ format: "text" });
+	if (typ != "galeria" && popis == "") {
+		error++;
+		container.find(".popisError").html("Nezadali ste popis!");
+	}
+	if (popis != "") {
+		formData.append("popis", popis);
+	}
+
+	if ($("input[name='ciel[]']:checked").length) {
+		$("input[name='ciel[]']:checked").each(function () {
+			formData.append("ciel[]", $(this).val());
+		});
+	} else {
+		error++;
+		container.find(".cielError").html("Vyberte aspoň jeden cieľ kam chcete pridať príspevok!");
+	}
+
+	formData.append("id", updatedID);
+
+	if (error == 0) {
+		toggleButtonLoader(thiss);
+
+		$.ajax({
+			url: base_url + "theme/ajax/updatePrispevok.php",
+			method: "POST",
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: formData,
+			dataType: "text",
+			success: function (data) {
+				console.log(data);
+				toggleButtonLoader(thiss);
+				alert("Príspevok bol úspešne pridaný!");
+				container.find(".err").html("");
+				$(".previewMainIMG, .preview").html("<p>Momentálne nie sú vybraté žiadne obrázky</p>");
+				tinymce.get("popis").setContent("");
+				$("#nadpis, #nahlad, #galeria").val("");
+				$("input[name='ciel[]']:checked").prop("checked", false);
+				addGalleryClose();
+				window.location.reload();
+			},
+		});
+	} else {
+		console.log("Error: " + error);
+	}
 });

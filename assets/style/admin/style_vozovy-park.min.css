@@ -1,1 +1,281 @@
-@font-face{font-family:"Inter";font-style:normal;font-weight:200;src:url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.eot");src:local(""),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.eot?#iefix") format("embedded-opentype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.woff2") format("woff2"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.woff") format("woff"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.ttf") format("truetype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.svg#Inter") format("svg")}@font-face{font-family:"Inter";font-style:normal;font-weight:300;src:url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.eot");src:local(""),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.eot?#iefix") format("embedded-opentype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.woff2") format("woff2"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.woff") format("woff"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.ttf") format("truetype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.svg#Inter") format("svg")}@font-face{font-family:"Inter";font-style:normal;font-weight:400;src:url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.eot");src:local(""),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.eot?#iefix") format("embedded-opentype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff2") format("woff2"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff") format("woff"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.ttf") format("truetype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.svg#Inter") format("svg")}@font-face{font-family:"Inter";font-style:normal;font-weight:500;src:url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.eot");src:local(""),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.eot?#iefix") format("embedded-opentype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.woff2") format("woff2"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.woff") format("woff"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.ttf") format("truetype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.svg#Inter") format("svg")}@font-face{font-family:"Inter";font-style:normal;font-weight:600;src:url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.eot");src:local(""),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix") format("embedded-opentype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.woff2") format("woff2"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.woff") format("woff"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.ttf") format("truetype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.svg#Inter") format("svg")}@font-face{font-family:"Inter";font-style:normal;font-weight:700;src:url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.eot");src:local(""),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix") format("embedded-opentype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.woff2") format("woff2"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.woff") format("woff"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.ttf") format("truetype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.svg#Inter") format("svg")}@font-face{font-family:"Inter";font-style:normal;font-weight:800;src:url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.eot");src:local(""),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.eot?#iefix") format("embedded-opentype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.woff2") format("woff2"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.woff") format("woff"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.ttf") format("truetype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.svg#Inter") format("svg")}@font-face{font-family:"Inter";font-style:normal;font-weight:900;src:url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.eot");src:local(""),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.eot?#iefix") format("embedded-opentype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.woff2") format("woff2"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.woff") format("woff"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.ttf") format("truetype"),url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.svg#Inter") format("svg")}body,html{min-height:100vh !important}.main-content{min-height:100vh}.btn.btn--primary{background:#2e74ff !important;color:#fff !important}.btn.btn--secondary{background:#70708b !important;color:#fff !important}#sidenav-main{background:#f0f5ff !important}.err{margin-top:0.5rem;text-align:left;color:#d14949;font-size:0.875rem !important}.gallery-title{font-weight:bolder}.sendBtn{-webkit-transition:0.3s;transition:0.3s;background:linear-gradient(94.44deg, #2e74ff .54%, rgba(46,116,255,0.7) 102.32%);color:#fff;font-weight:700}.sendBtn:hover{-webkit-transform:scale(1.02);transform:scale(1.02);background-color:#eeeeee}*{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box}.addVehicle{display:none;z-index:2;text-align:center;top:3rem;left:0;width:100%;height:100%;position:absolute;z-index:10}.previewMainIMG ol{justify-items:center;list-style:none;display:-ms-grid;display:grid;-ms-grid-columns:(minmax(0, 1fr))[1];grid-template-columns:repeat(1, minmax(0, 1fr))}.previewMainIMG ol li{width:100%;padding:2rem}.previewMainIMG ol li img{width:15rem;height:auto;border-radius:0.75rem}.labelBTN{-webkit-transition:0.3s;transition:0.3s;background-color:#eeeeee !important}.labelBTN:hover{-webkit-transform:scale(1.02);transform:scale(1.02);background-color:#eeeeee}.machine-catalog .machine-catalog-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:none;-ms-flex-align:none;align-items:none;-ms-flex-flow:row wrap;flex-flow:row wrap;gap:2rem}.machine-catalog .machine-catalog-container.empty{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.machine-catalog .machine-catalog-container .machine-catalog-card{position:relative;background:#f1f1f1;padding:1rem;border-radius:0.4rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:none;-ms-flex-pack:none;justify-content:none;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:18rem}.machine-catalog .machine-catalog-container .machine-catalog-card h4{text-align:left;width:100%;max-width:100% !important;word-wrap:break-word;font-size:1.2rem}.machine-catalog .machine-catalog-container .machine-catalog-card p{width:100%;font-size:0.9rem}.machine-catalog .machine-catalog-container .machine-catalog-card .delete-card{cursor:pointer;width:30px;height:30px;position:absolute;right:-1rem;top:-1rem;background-color:#232388;border-radius:50%;-webkit-transition:0.3s;transition:0.3s;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.machine-catalog .machine-catalog-container .machine-catalog-card .delete-card:hover{background-color:#131361}.machine-catalog .machine-catalog-container .machine-catalog-card .overlay{overflow:hidden;width:100%}.machine-catalog .machine-catalog-container .machine-catalog-card .overlay img{border-radius:0.4rem;float:left;width:100%;height:15rem;-o-object-fit:cover;object-fit:cover}.emptyContainer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;justify-self:center}.emptyContainer *{text-align:center}
+/* COLORS */
+/* FONTS */
+/* inter-200 - latin-ext_latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.eot?#iefix") format("embedded-opentype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.woff2") format("woff2"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.woff") format("woff"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.ttf") format("truetype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-200.svg#Inter") format("svg"); /* Legacy iOS */
+}
+/* inter-300 - latin-ext_latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.eot?#iefix") format("embedded-opentype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.woff2") format("woff2"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.woff") format("woff"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.ttf") format("truetype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-300.svg#Inter") format("svg"); /* Legacy iOS */
+}
+/* inter-regular - latin-ext_latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff2") format("woff2"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff") format("woff"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.ttf") format("truetype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-regular.svg#Inter") format("svg"); /* Legacy iOS */
+}
+/* inter-500 - latin-ext_latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.eot?#iefix") format("embedded-opentype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.woff2") format("woff2"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.woff") format("woff"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.ttf") format("truetype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-500.svg#Inter") format("svg"); /* Legacy iOS */
+}
+/* inter-600 - latin-ext_latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.eot?#iefix") format("embedded-opentype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.woff2") format("woff2"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.woff") format("woff"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.ttf") format("truetype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-600.svg#Inter") format("svg"); /* Legacy iOS */
+}
+/* inter-700 - latin-ext_latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.eot?#iefix") format("embedded-opentype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.woff2") format("woff2"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.woff") format("woff"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.ttf") format("truetype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-700.svg#Inter") format("svg"); /* Legacy iOS */
+}
+/* inter-800 - latin-ext_latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.eot?#iefix") format("embedded-opentype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.woff2") format("woff2"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.woff") format("woff"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.ttf") format("truetype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-800.svg#Inter") format("svg"); /* Legacy iOS */
+}
+/* inter-900 - latin-ext_latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.eot?#iefix") format("embedded-opentype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.woff2") format("woff2"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.woff") format("woff"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.ttf") format("truetype"), url("../fonts/secondary/inter-v7-latin-ext_latin_cyrillic-ext_cyrillic-900.svg#Inter") format("svg"); /* Legacy iOS */
+}
+body,
+html {
+  min-height: 100vh !important;
+}
+
+.main-content {
+  min-height: 100vh;
+}
+
+button.loading {
+  position: relative;
+  pointer-events: none !important;
+}
+button.loading .btnLoader {
+  position: absolute;
+  border-radius: 0.75rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #2e74ff;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+button.loading .btnLoader lord-icon {
+  width: 1.5rem;
+  height: auto;
+}
+
+.btn.btn--primary {
+  background: #2e74ff !important;
+  color: #fff !important;
+}
+.btn.btn--secondary {
+  background: #70708b !important;
+  color: #fff !important;
+}
+
+#sidenav-main {
+  background: #f0f5ff !important;
+}
+
+.err {
+  margin-top: 0.5rem;
+  text-align: left;
+  color: rgb(209, 73, 73);
+  font-size: 0.875rem !important;
+}
+
+.gallery-title {
+  font-weight: bolder;
+}
+
+.sendBtn {
+  transition: 0.3s;
+  background: linear-gradient(94.44deg, #2e74ff 0.54%, rgba(46, 116, 255, 0.7) 102.32%);
+  color: #fff;
+  font-weight: 700;
+}
+.sendBtn:hover {
+  transform: scale(1.02);
+  background-color: #eeeeee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.addVehicle {
+  display: none;
+  z-index: 2;
+  text-align: center;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.previewMainIMG ol {
+  justify-items: center;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.previewMainIMG ol li {
+  width: 100%;
+  padding: 2rem;
+}
+.previewMainIMG ol li img {
+  width: 15rem;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.labelBTN {
+  transition: 0.3s;
+  background-color: #eeeeee !important;
+}
+.labelBTN:hover {
+  transform: scale(1.02);
+  background-color: #eeeeee;
+}
+
+.machine-catalog .machine-catalog-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: none;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+.machine-catalog .machine-catalog-container.empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card {
+  position: relative;
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  width: 18rem;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card h4 {
+  text-align: left;
+  width: 100%;
+  max-width: 100% !important;
+  word-wrap: break-word;
+  font-size: 1.2rem;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card p {
+  width: 100%;
+  font-size: 0.9rem;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card .delete-card {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  background-color: #232388;
+  border-radius: 50%;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card .delete-card:hover {
+  background-color: #131361;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card .update-card {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 1rem;
+  top: -1rem;
+  background-color: #b9b53c;
+  border-radius: 50%;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card .update-card:hover {
+  background-color: #dbd417;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card .overlay {
+  overflow: hidden;
+  width: 100%;
+}
+.machine-catalog .machine-catalog-container .machine-catalog-card .overlay img {
+  border-radius: 0.4rem;
+  float: left;
+  width: 100%;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+}
+.emptyContainer * {
+  text-align: center;
+}
+
+.updPostBtn {
+  transition: 0.3s;
+  background: linear-gradient(94.44deg, #2e74ff 0.54%, rgba(46, 116, 255, 0.7) 102.32%);
+  color: #fff;
+  font-weight: 700;
+}
+.updPostBtn:hover {
+  transform: scale(1.02);
+  background-color: #eeeeee;
+}

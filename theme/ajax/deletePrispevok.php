@@ -11,6 +11,7 @@
     if($item = $db->query("SELECT typ, nadpis, datum_pridania FROM prispevky WHERE id = '$id'")){
         $typ = $item[0][0];
         $db->query("DELETE FROM prispevky WHERE id = $id");
+        $db->query("DELETE FROM obrazky_prispevkov WHERE id_prispevok = $id");
         if($typ != "text"){
             $nadpis = $item[0][1];
             $datum = $item[0][2];
@@ -20,5 +21,3 @@
     } else {
         echo "##Err: WrongID##";
     }
-?>
-    
