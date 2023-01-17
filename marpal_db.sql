@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hostiteľ: 172.17.0.1:3306
--- Čas generovania: Št 17.Nov 2022, 16:54
--- Verzia serveru: 10.3.36-MariaDB-1:10.3.36+maria~ubu2004-log
--- Verzia PHP: 8.0.23
+-- Hostiteľ: 127.0.0.1
+-- Čas generovania: Út 17.Jan 2023, 22:40
+-- Verzia serveru: 10.4.21-MariaDB
+-- Verzia PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,7 +55,7 @@ INSERT INTO `access_tokens` (`id`, `token`, `is_active`, `date_created`) VALUES
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `login` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `last_login` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -64,7 +64,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `login`, `password`, `last_login`) VALUES
-(1, 'admin', 'marecek9', NULL);
+(2, 'admin', '$2y$10$K6uDXMBGCxhKsjPQ2SkTzOujd/a7JZ/XZ5gxNZE67sowPVH452GSy', NULL);
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE `kontaktne_info` (
 --
 
 INSERT INTO `kontaktne_info` (`id`, `typ`, `hodnota`) VALUES
-(1, 'sidlo', 'Športová 3151, 02401 KNM'),
+(1, 'sidlo', 'Športová 3151, 02401KNM'),
 (2, 'korAdresa', 'Štúrová 1211/63 02404 KNM'),
 (3, 'iban', 'SK66 1100 0000 0029 2888 9969'),
 (4, 'konatel', 'Pavol Kubala'),
@@ -173,7 +173,28 @@ INSERT INTO `obrazky_prispevkov` (`id`, `id_prispevok`, `cesta`) VALUES
 (116, 81, 'obr1.jpg'),
 (117, 81, 'obr2.jpg'),
 (118, 81, 'obr3.jpg'),
-(119, 81, 'obr4.jpg');
+(119, 81, 'obr4.jpg'),
+(120, 88, 'obr0.jpg'),
+(121, 90, 'obr0.png'),
+(122, 90, 'obr1.png'),
+(123, 90, 'obr2.png'),
+(124, 90, 'obr3.png'),
+(125, 90, 'obr4.png'),
+(126, 90, 'obr5.jpg'),
+(127, 90, 'obr6.png'),
+(128, 90, 'obr7.png'),
+(129, 90, 'obr8.jpg'),
+(130, 91, 'obr0.png'),
+(131, 91, 'obr1.png'),
+(132, 91, 'obr2.png'),
+(133, 91, 'obr3.png'),
+(134, 91, 'obr4.png'),
+(135, 91, 'obr5.jpg'),
+(136, 91, 'obr6.png'),
+(137, 91, 'obr7.png'),
+(138, 91, 'obr8.jpg'),
+(142, 97, 'obr0.jpg'),
+(143, 97, 'obr1.jpg');
 
 -- --------------------------------------------------------
 
@@ -225,38 +246,9 @@ CREATE TABLE `prispevky` (
 --
 
 INSERT INTO `prispevky` (`id`, `typ`, `datum_pridania`, `ciel_pridania`, `nadpis`, `popis`, `koncovka_nahladu`, `fb_post_id`) VALUES
-(62, 'galeria', '2022-01-31 08:33:47', 'fb,web', 'Práce s hydraulickou rukou', '', 'jpg', 0),
-(64, 'galeria', '2022-01-31 08:56:45', 'fb,web', 'Vrtné práce', 'UmVhbGl6w6FjaWEgdmlhY2Vyw71jaCB2cnRvdiDinJTvuI8NCg0KDQrFoGlyxaFpdSDFoWvDoWx1IG5hxaFpY2ggcHLDoWMgc2kgbcO0xb5ldGUgcG96cmllxaUgbmEgbmHFoWVqIHdlYm92ZWogc3Ryw6Fua2UNCg0KaHR0cHM6Ly9tYXJwYWwuZXUvDQoNCg0K4oCiDQoNCuKAog0KDQrigKINCg0KI21hcnBhbCAjdnJ0YW5pZXN0dWRuaSAjdnJ0bmVwcmFjZSAjc3RhdmVibmVwcmFjZSAjc3R1ZG5hbmFrbHVjICN6ZW1uZXByYWNlICN2eWtvcG92ZXByYWNlICNzdGF2YmFyb2Rpbm55Y2hkb21vdg0K', 'jpg', 0),
-(65, 'galeria', '2022-01-31 09:04:33', 'fb,web', 'Výkopové práce', 'WmVtbsOpIGEgdsO9a29wb3bDqSBwcsOhY2Ug8J+Sr/CfkpkNCg0KDQpBayBtw6F0ZSB6w6F1amVtIG8gbmlla3RvcsO6IHogbmHFoWljaCBzbHXFvmllYiwgbmV2w6FoYWp0ZSB2eXXFvmnFpSBrb250YWt0bsO9IGZvcm11bMOhciBuYSBuYcWhZWogc3Ryw6Fua2UNCg0KaHR0cHM6Ly9tYXJwYWwuZXUva29udGFrdA0KDQrigKINCuKAog0K4oCiDQojbWFycGFsICN2cnRhbmllc3R1ZG5pICN2cnRuZXByYWNlICNzdGF2ZWJuZXByYWNlICNzdHVkbmFuYWtsdWMgI3plbW5lcHJhY2UgI3Z5a29wb3ZlcHJhY2UgI3N0YXZiYXJvZGlubnljaGRvbW92DQo=', 'jpg', 0),
-(67, 'galeria', '2022-01-31 09:13:40', 'fb,web', 'Stavebné práce', 'U3RhdmVibsOpIHByw6FjZSDwn4+gDQpBayB2w6FzIG5hxaFhIHByw6FjYSBvc2xvdmlsYSwgbmV2w6FoYWp0ZSB2eXXFvmnFpSBrb250YWt0bsO9IGZvcm11bMOhciBuYSBuYcWhZWogc3Ryw6Fua2UNCmh0dHBzOi8vbWFycGFsLmV1L2tvbnRha3QNCg0K4oCiDQrigKINCuKAog0KI21hcnBhbCAjdnJ0YW5pZXN0dWRuaSAjdnJ0bmVwcmFjZSAjc3RhdmVibmVwcmFjZSAjc3R1ZG5hbmFrbHVjICN6ZW1uZXByYWNlICN2eWtvcG92ZXByYWNlICNzdGF2YmFyb2Rpbm55Y2hkb21vdg0K', 'jpg', 0),
-(68, 'galeria', '2022-02-02 09:34:03', 'fb,web', 'Zlý deň :(', 'WmzDvSBkZcWIIPCfmJYNCg0KTmllIGthxb5kw70gZGXFiCBqZSBuZWRlxL5hLi4uDQoNCuKAog0K4oCiDQrigKINCiNtYXJwYWwgI3ZydGFuaWVzdHVkbmkgI3ZydG5lcHJhY2UgI3N0YXZlYm5lcHJhY2UgI3N0dWRuYW5ha2x1YyAjemVtbmVwcmFjZSAjdnlrb3BvdmVwcmFjZSAjc3RhdmJhcm9kaW5ueWNoZG9tb3YNCg==', 'jpg', 0),
-(73, 'galeria', '2022-02-02 09:42:13', 'web', 'Rôzne', '', 'jpg', 0),
-(80, 'medium', '2022-02-02 10:00:24', 'fb,web', 'Ľudia ľudom', 'xL11ZGlhIMS+dcSPb20g8J+SmQ0KDQoNCuKAog0K4oCiDQrigKINCiNtYXJwYWwgI3ZydGFuaWVzdHVkbmkgI3ZydG5lcHJhY2UgI3N0YXZlYm5lcHJhY2UgI3N0dWRuYW5ha2x1YyAjemVtbmVwcmFjZSAjdnlrb3BvdmVwcmFjZSAjc3RhdmJhcm9kaW5ueWNoZG9tb3YNCg==', 'jpg', 2147483647),
-(81, 'galeria', '2022-02-02 10:05:31', 'fb,web', 'Vrtná súprava v malom priestore', 'UHJlamF6ZCB2cnRuZWogc8O6cHJhdnkgdiBtYWxvbSBwcmllc3RvcmUuIFbDvXp2eSBwcmUgbsOhcyBuZWV4aXN0dWrDuiDwn5Kv8J+SmQ0KDQoNCuKAog0K4oCiDQrigKINCiNtYXJwYWwgI3ZydGFuaWVzdHVkbmkgI3ZydG5lcHJhY2UgI3N0YXZlYm5lcHJhY2UgI3N0dWRuYW5ha2x1YyAjemVtbmVwcmFjZSAjdnlrb3BvdmVwcmFjZSAjc3RhdmJhcm9kaW5ueWNoZG9tb3YNCg==', 'jpg', 0),
-(82, 'medium', '2022-02-02 10:10:11', 'fb,web', 'Veľkopriem. vrtná súprava Tescar CF3', 'TmHFoWEgdmXEvmtvcHJpZW1lcm92w6EgdnJ0bsOhIHPDunByYXZhIFRlc2NhciBDRjMg8J+Yjg0KDQpBayB2w6FzIG5hxaFhIHByw6FjYSBvc2xvdmlsYSwgbmV2w6FoYWp0ZSB2eXXFvmnFpSBrb250YWt0bsO9IGZvcm11bMOhciBuYSBuYcWhZWogc3Ryw6Fua2UNCg0KaHR0cHM6Ly9tYXJwYWwuZXUva29udGFrdA0KDQrigKINCuKAog0K4oCiDQojbWFycGFsICN2cnRhbmllc3R1ZG5pICN2cnRuZXByYWNlICNzdGF2ZWJuZXByYWNlICNzdHVkbmFuYWtsdWMgI3plbW5lcHJhY2UgI3Z5a29wb3ZlcHJhY2UgI3N0YXZiYXJvZGlubnljaGRvbW92DQo=', 'jpg', 2147483647),
-(83, 'medium', '2022-02-02 10:13:40', 'fb,web', 'Comacchio 601 v akcii', 'VnJ0bsOhIHPDunByYXZhIENvbWFjY2hpbyA2MDEgdiBha2NpaSDwn6SpDQoNCg0KQWsgdsOhcyBuYcWhYSBwcsOhY2Egb3Nsb3ZpbGEsIG5ldsOhaGFqdGUgdnl1xb5pxaUga29udGFrdG7DvSBmb3JtdWzDoXIgbmEgbmHFoWVqIHN0csOhbmtlDQpodHRwczovL21hcnBhbC5ldS9rb250YWt0DQoNCuKAog0K4oCiDQrigKINCiNtYXJwYWwgI3ZydGFuaWVzdHVkbmkgI3ZydG5lcHJhY2UgI3N0YXZlYm5lcHJhY2UgI3N0dWRuYW5ha2x1YyAjemVtbmVwcmFjZSAjdnlrb3BvdmVwcmFjZSAjc3RhdmJhcm9kaW5ueWNoZG9tb3YNCg==', 'mp4', 2147483647),
-(84, 'medium', '2022-02-02 11:37:32', 'fb,web', 'Výstavba betónového monolitu', 'VsO9c3RhdmJhIGJldMOzbm92w6lobyBtb25vbGl0dSDwn5qnDQoNClYgbmHFoW9tIHJlcGVydG/DoXJpIG5lY2jDvWJhIMW+aWFkZW4gdHlwIHN0YXZieS4gViBwcsOtcGFkZSB6w6F1am11IGFsZWJvIG90w6F6b2sgc2EgbsOhbSBvenZpdGUuIE9ka2F6IG5hIG5hxaF1IHdlYnN0csOhbmt1IGplIG5pxb7FoWllDQoNCmh0dHBzOi8vbWFycGFsLmV1L2tvbnRha3QNCg0K4oCiDQrigKINCuKAog0KI21hcnBhbCAjdnJ0YW5pZXN0dWRuaSAjdnJ0bmVwcmFjZSAjc3RhdmVibmVwcmFjZSAjc3R1ZG5hbmFrbHVjICN6ZW1uZXByYWNlICN2eWtvcG92ZXByYWNlICNzdGF2YmFyb2Rpbm55Y2hkb21vdg==', 'jpg', 2147483647);
-
--- --------------------------------------------------------
-
---
--- Štruktúra tabuľky pre tabuľku `typy_prispevkov`
---
-
-CREATE TABLE `typy_prispevkov` (
-  `id` int(11) NOT NULL,
-  `typ` varchar(30) NOT NULL,
-  `farba` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Sťahujem dáta pre tabuľku `typy_prispevkov`
---
-
-INSERT INTO `typy_prispevkov` (`id`, `typ`, `farba`) VALUES
-(1, 'text', '#5a98ac'),
-(2, 'galeria', '#ac5a5a'),
-(4, 'medium', '#ac5a5a');
+(90, 'text', '2022-11-18 13:47:31', 'web', 'Test3', 'cG9waQ==', 'jpg', 0),
+(94, 'text', '2023-01-17 18:36:39', 'web', 'Tesr', 'dHN0Zw==', '', 0),
+(97, 'galeria', '2023-01-17 19:03:15', 'web', 'v', 'dnZ2dnZ2dw==', 'jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -277,28 +269,8 @@ CREATE TABLE `vozovypark` (
 --
 
 INSERT INTO `vozovypark` (`id`, `title`, `preview`, `is_hydraulicke`, `popis`) VALUES
-(229, 'Iveco 6x6 valník', 'iveco-6x6-valnik-s-hydraulickou-rukou_02022022_075020.jpg', 1, 'S hydraulickou rukou'),
-(230, 'Vrtná súprava comacchio 405', 'vrtna-suprava-comacchio-405_02022022_075138.jpg', 0, ''),
-(231, 'Iveco sklápač 6 x 6 board matic', 'iveco-sklapac-6-x-6-board-matic_02022022_075201.jpg', 0, ''),
-(232, 'Hákový nosič kontajnerov 6x6', 'hakovy-nosic-kontajnerov-6x6-s-hr-a-drapakom_02022022_075254.jpg', 1, 'S hydraulickou rukou a drapákom'),
-(233, 'Otočné pásové rýpadlo 15t takeuchi 1140', 'otocne-pasove-rypadlo-15t-takeuchi-1140_02022022_075337.jpg', 0, ''),
-(234, 'Sprievodné vozidlo Mercedes Vito 4x4', 'sprievodne-vozidlo-mercedes-vito-4x4_02022022_075429.jpg', 0, ''),
-(235, 'Kolesový dumper sklápač', 'kolesovy-dumper-trojstranny-sklapac-6t_02022022_075532.jpg', 0, 'Trojstránný, do 6 ton'),
-(236, 'Rýpadlo nakladač CAT432F2', 'rypadlo-nakladac-cat432f2_02022022_075636.jpg', 0, ''),
-(237, 'Dozer komatsu 65 ex', 'dozer-komatsu-65-ex-vaha-24t_02022022_075715.jpg', 0, 'Váha 24 ton'),
-(238, 'Vrtná súprava Tescar CF 3', 'velkopriemer-vrtna-suprava-tescar-cf-3_02022022_080045.jpg', 0, 'Veľkopriemerová'),
-(239, 'Vrtná súprava Wirth B1', 'malopriemer-vrtna-suprava-wirth-b1-do-300mm_02022022_080212.jpg', 0, 'Málopriemerová (do 300mm)'),
-(240, 'Otočné rýpadlo takeuchi 80ha 8t', 'otocne-rypadlo-takeuchi-80ha-8t_02022022_080257.jpg', 0, ''),
-(241, 'Pojazdná dielňa Ford Transit 4x4 (2ks)', 'pojazdna-dielna-ford-transit-4x4-2ks_02022022_080646.jpg', 0, ''),
-(242, 'Spriev. vozidlo Toyota HILUX 4x4 (2ks)', 'spriev-vozidlo-toyota-hilux-4x4-2ks_02022022_080724.jpg', 0, ''),
-(243, 'Pásový dumper 1t', 'pasovy-dumper-1t_02022022_080754.jpg', 0, ''),
-(245, 'Rýpadlo nakladač Caterpillar 432f 2', 'rypadlo-nakladac-caterpillar-432f2_02022022_080940.jpg', 0, ''),
-(246, 'Otočné rýpadlo takeuchi FR 138', 'otocne-rypadlo-takeuchi-fr-138_02022022_081103.jpg', 0, 'S komplet príslušenstvom ako zbíjacie kladivo, vŕtacie zariadenie, 30 40 50 70 90 120 lyžice'),
-(247, 'Dvojstranný sklápač Iveco 6x6', 'dvojstranny-sklapac-iveco-6x6-s-hr_02022022_081725.jpg', 1, 'S hydraulickou rukou'),
-(249, 'Šmykom riadený nakladač GEHL', 'smykom-riadeny-nakladac-gehl_02022022_102330.jpg', 0, 'Výkon 52KW, dokáže poháňať lesnú frézu, paletizačné vidly, plochá lyžica aj lyžica na zimnú údržbu'),
-(250, 'Pásové otočné rýpadlo takeuchi 280s', 'pasove-otocne-rypadlo-takeuchi-280s_02022022_102821.jpg', 0, 'S lyžicami 30 40 50 60 70 90 120 140, s vŕtacím zariadením, zbíjacím kladivom, hydraulickým rýchloupínakom'),
-(251, 'Pásová vrtná súprava Comacchio', 'pasova-vrtna-suprava-comacchio_02022022_103715.jpg', 0, 'S gumeným podvozkom rozmer od 160 do 230 cm šírky s výškou 245 cm, vŕta priemery od 89 do 325m, maximálna možná hĺbka podľa výrobcu 700 m'),
-(252, 'Pásová vrtná súprava Fraste XL', 'pasova-vrtna-suprava-fraste-xl_02022022_104455.jpg', 0, 'Na gumených pásoch, šírka 2,1m  váha 8,5t, vŕtanie priemerov od 56 do 280 mm hĺbka 320m');
+(254, 'test2', 'test2_17012023_163957.jpg', 1, 'popisok'),
+(257, 'test', 'test_17012023_203810.jpg', 0, 'feerr');
 
 --
 -- Kľúče pre exportované tabuľky
@@ -341,12 +313,6 @@ ALTER TABLE `prispevky`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexy pre tabuľku `typy_prispevkov`
---
-ALTER TABLE `typy_prispevkov`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexy pre tabuľku `vozovypark`
 --
 ALTER TABLE `vozovypark`
@@ -366,7 +332,7 @@ ALTER TABLE `access_tokens`
 -- AUTO_INCREMENT pre tabuľku `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pre tabuľku `kontaktne_info`
@@ -378,7 +344,7 @@ ALTER TABLE `kontaktne_info`
 -- AUTO_INCREMENT pre tabuľku `obrazky_prispevkov`
 --
 ALTER TABLE `obrazky_prispevkov`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 
 --
 -- AUTO_INCREMENT pre tabuľku `page_data`
@@ -390,19 +356,13 @@ ALTER TABLE `page_data`
 -- AUTO_INCREMENT pre tabuľku `prispevky`
 --
 ALTER TABLE `prispevky`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
-
---
--- AUTO_INCREMENT pre tabuľku `typy_prispevkov`
---
-ALTER TABLE `typy_prispevkov`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT pre tabuľku `vozovypark`
 --
 ALTER TABLE `vozovypark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

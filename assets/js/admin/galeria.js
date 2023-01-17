@@ -475,6 +475,23 @@ $(document).on("click", ".updPostBtn", function () {
 		formData.append("popis", popis);
 	}
 
+	if (typ != "text") {
+		if ($("#nahlad")[0].files[0]) {
+			console.log("add nahl");
+			formData.append("nahlad", $("#nahlad")[0].files[0]);
+		}
+	}
+
+	if (typ == "galeria") {
+		if ($("#galeria")[0].files.length > 0) {
+			var totalfiles = document.getElementById("galeria").files.length;
+			for (let index = 0; index < totalfiles; index++) {
+				console.log("add gal");
+				formData.append("galeria[]", document.getElementById("galeria").files[index]);
+			}
+		}
+	}
+
 	if ($("input[name='ciel[]']:checked").length) {
 		$("input[name='ciel[]']:checked").each(function () {
 			formData.append("ciel[]", $(this).val());
