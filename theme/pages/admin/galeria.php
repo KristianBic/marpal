@@ -42,7 +42,7 @@
                       </span>
                       <h6 class="post-card-title" data-title="titleeee"><?php echo $prispevok->getNadpis(); ?></h6>
                       <div class="post-stats">
-                        <div class="post-type gallery-type" style="--farba: <?php echo $prispevok->getFarba(); ?>"><?php echo $prispevok->getTyp(); ?></div>
+                        <div class="post-type gallery-type" style="background-color: <?php echo $prispevok->getFarba(); ?>"><?php echo $prispevok->getTyp(); ?></div>
                         <p class="post-text"><?php echo $prispevok->getDatumPridania(); ?></p>
                         <div class="post-socialNetworks">
                           <?php if (strpos($prispevok->getCielPridania(), "fb") !== false) { ?>

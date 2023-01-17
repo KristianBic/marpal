@@ -15,7 +15,8 @@ class Prispevok
 
     protected $isValid;
 
-    function __construct($db, $id) {
+    function __construct($db, $id)
+    {
         $this->id = $id;
         $this->db = $db;
         if ($item = $this->db->query("SELECT * FROM prispevky WHERE id = $id")) {
@@ -26,9 +27,9 @@ class Prispevok
             $this->cielPridania = $item[3];
             $this->nadpis = $item[4];
             $this->popis = base64_decode($item[5]);
-            $this->nahlad = "nahlad.".$item[6];
+            $this->nahlad = "nahlad." . $item[6];
             $this->obrazky = array();
-            if($this->typ == "medium") array_push($this->obrazky, $this->nahlad);
+            if ($this->typ == "medium") array_push($this->obrazky, $this->nahlad);
         } else $this->isValid = false;
     }
 
@@ -69,9 +70,9 @@ class Prispevok
 
     public function getObrazky()
     {
-        if($this->typ != "text"){
-            if(sizeof($this->obrazky) == 0){
-                if($imgs = $this->db->query("SELECT cesta FROM obrazky_prispevkov WHERE id_prispevok = ".$this->id)){
+        if ($this->typ != "text") {
+            if (sizeof($this->obrazky) == 0) {
+                if ($imgs = $this->db->query("SELECT cesta FROM obrazky_prispevkov WHERE id_prispevok = " . $this->id)) {
                     foreach ($imgs as $img) {
                         array_push($this->obrazky, $img[0]);
                     }
@@ -83,8 +84,17 @@ class Prispevok
 
     public function getFarba()
     {
+        /*
         if($farba = $this->db->select("SELECT farba FROM typy_prispevkov WHERE typ = '".$this->typ."'")){
             return $farba[0][0];
+        }
+        */
+        if ($this->typ == "text") {
+            return "#5a98ac";
+        } else if ($this->typ == "galeria") {
+            return "#ac5a5a";
+        } else if ($this->typ == "medium") {
+            return "#ac5a5a";
         }
     }
 
@@ -93,5 +103,3 @@ class Prispevok
         return $this->nahlad;
     }
 }
-
-?>
